@@ -8,6 +8,7 @@ interface Props {
 }
 
 function SignedInHeader({ session }: Props) {
+  //console.log(session);
   const image = session?.user?.image as string;
   const name = session?.user?.name as string;
   return (

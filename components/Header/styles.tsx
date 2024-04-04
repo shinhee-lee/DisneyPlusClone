@@ -92,7 +92,7 @@ export const UserImg = styled.img`
 
 export const DropDown = styled.div`
   position: fixed;
-  top: 48px;
+  top: 60px;
   right: 15px;
   background: rgb(19, 19, 19);
   border: 1px solid rgba(151, 151, 151, 0.34);
@@ -101,7 +101,7 @@ export const DropDown = styled.div`
   padding: 10px;
   font-size: 14px;
   letter-spacing: 3px;
-  width: 100px;
+  width: 90px;
   opacity: 0;
 `;
 
