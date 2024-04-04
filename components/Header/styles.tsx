@@ -39,3 +39,89 @@ export const LoginContainer = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
+
+export const NavMenu = styled.div`
+  display: flex;
+  flex: 1;
+  margin-left: 25px;
+  align-items: center;
+  span {
+    font-size: 13px;
+    letter-spacing: 1.42px;
+    position: relative;
+    text-decoration: none;
+
+    &:after {
+      content: "";
+      height: 2px;
+      background: ${(props) => props.theme.white};
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      opacity: 0;
+      transform: scaleX(0);
+      transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+      transform-origin: left center;
+    }
+  }
+  img {
+    height: 20px;
+    z-index: auto;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    cursor: pointer;
+
+    &:hover {
+      span:after {
+        transform: scaleX(1);
+        opacity: 1;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+export const UserImg = styled.img`
+  height: 100%;
+`;
+
+export const DropDown = styled.div`
+  position: fixed;
+  top: 48px;
+  right: 15px;
+  background: rgb(19, 19, 19);
+  border: 1px solid rgba(151, 151, 151, 0.34);
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 0px 18px 0px;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  width: 100px;
+  opacity: 0;
+`;
+
+export const SignOut = styled.div`
+  position: relative;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  ${UserImg} {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    ${DropDown} {
+      opacity: 1;
+      transition-duration: 1s;
+    }
+  }
+`;

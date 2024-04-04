@@ -1,5 +1,5 @@
 import React from "react";
-import { useSession } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import { Login, LoginContainer, Logo, Nav } from "./styles";
 import SignedInHeader from "./SignedInHeader";
 
@@ -12,7 +12,7 @@ function Header() {
     if (session) return <SignedInHeader session={session} />;
     return (
       <LoginContainer>
-        <Login>Login</Login>
+        <Login onClick={() => signIn()}>Login</Login>
       </LoginContainer>
     );
   };
